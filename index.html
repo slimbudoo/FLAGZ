@@ -1,0 +1,1044 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#071f28"><title>FLAG QUIZ! | World Flags</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bungee&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{font-family:'DM Sans',sans-serif;color:#eaf8f4;background:#071f28;font-synthesis:none}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% -10%,#1c5253 0,transparent 60%),#071f28}button,input,select{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.5}.wrap{width:min(100% - 32px,780px);margin:auto;padding:40px 0 70px}.hidden{display:none!important}.logo{font:clamp(36px,8vw,70px)/1.12 Bungee,sans-serif;letter-spacing:1px;margin:0 0 4px;color:#f2fffa;text-shadow:4px 4px #126d69}.subtitle{color:#a7cdc8;margin:0 0 30px}.panel{background:#12333d;border:1px solid #2a5b60;border-radius:20px;padding:24px;margin:20px 0;box-shadow:0 10px 28px #00182038}.panel h2{margin:0 0 15px;font-size:20px}label{font-weight:700;display:block;margin-bottom:9px}.formline{display:flex;gap:10px;align-items:center;flex-wrap:wrap}input,select{background:#071f28;border:1px solid #428078;border-radius:10px;color:white;padding:13px 14px;min-width:0}input{flex:1;min-width:160px}select{width:100%}.button{border:1px solid #5caba0;background:#1c5354;color:#fff;border-radius:12px;padding:12px 17px;font-weight:800;transition:background .15s,transform .15s}.button:hover:not(:disabled){background:#27716e;transform:translateY(-1px)}.button.primary{color:#06332e;background:#71e1b3;border-color:#71e1b3}.button.primary:hover{background:#a3f1c9}.button.ghost{background:transparent}.mode-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.mode{padding:22px 13px;min-height:135px;display:flex;flex-direction:column;justify-content:center;gap:7px}.mode strong{font:20px Bungee}.mode span{font-size:13px;color:#b0d0ca}.tiny{font-size:13px;color:#aecbc8}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat{background:#0c2832;border:1px solid #22545b;border-radius:12px;text-align:center;padding:15px 8px}.stat small{display:block;color:#aecac8;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.08em}.stat strong{display:block;font-size:clamp(19px,3vw,30px);font-variant-numeric:tabular-nums;margin-top:5px}.toprow{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}.flag{display:block;width:min(100%,360px);height:225px;object-fit:contain;margin:25px auto 16px;background:#092631;border-radius:10px}.answers{display:grid;gap:11px;max-width:440px;margin:0 auto 20px}.answers button{padding:16px;min-height:56px;background:#1a4a50;border:2px solid #347b7d;border-radius:12px;color:white;font-weight:800;font-size:16px}.answers button:hover:not(:disabled){background:#286969}.answers button.correct{background:#1c7055;border-color:#83e2a8}.answers button.wrong{background:#8c3745;border-color:#e68c95}.progress{height:9px;background:#0a2630;border-radius:30px;overflow:hidden;margin:15px 0}.bar{height:100%;width:0;background:#71e1b3;transition:width .2s}.toolbar{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}.message{text-align:center;min-height:23px;color:#b5d8d1;font-weight:700}.center{text-align:center}.results h2{font:27px Bungee}.result-time{font:clamp(32px,7vw,55px) Bungee;color:#84e6ba}.leader-row{display:grid;grid-template-columns:45px 1fr 115px 70px;gap:8px;padding:12px 6px;border-bottom:1px solid #2e5a61;align-items:center;font-size:14px}.leader-head{font-weight:800;color:#9acac2;font-size:12px;text-transform:uppercase}.leader-row>div:nth-child(3),.leader-row>div:nth-child(4){text-align:right;font-variant-numeric:tabular-nums}.pill{display:inline-block;border:1px solid #3c8a7b;border-radius:20px;padding:5px 9px;color:#a3dfc8;font-size:12px}.warning{color:#ffcca9}#countdown{font:45px Bungee;text-align:center;color:#8cebb7;min-height:55px}#leader-status{margin:10px 0}.footer{font-size:12px;color:#86aaa8;text-align:center;margin-top:30px}@media(max-width:550px){.wrap{padding-top:25px}.panel{padding:17px}.mode-grid{grid-template-columns:1fr}.mode{min-height:72px;flex-direction:row;align-items:center;justify-content:space-between}.mode strong{font-size:17px}.stats{gap:5px}.stat{padding:12px 4px}.flag{height:175px}.leader-row{grid-template-columns:25px 1fr 85px 45px;font-size:12px;gap:4px}.leader-head{font-size:10px}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body><main class="wrap">
+<section id="home"><div class="center"><h1 class="logo">FLAG QUIZ!</h1><p class="subtitle">197 flags · 7 speedrun challenges · 1 global leaderboard</p></div>
+<div class="panel"><div class="toprow"><h2>Your player profile</h2><span class="pill">Saved on this device</span></div><label for="nickname">Nickname</label><div class="formline"><input id="nickname" maxlength="20" placeholder="Choose a nickname" autocomplete="nickname"><button id="save-name" class="button primary">Save name</button></div><p id="name-status" class="tiny" aria-live="polite">Pick a name to save your scores.</p></div>
+<div class="mode-grid"><button class="button mode" data-mode="easy"><strong>Easy</strong><span>5 hints · keep trying</span></button><button class="button mode" data-mode="hard"><strong>Hard</strong><span>3-second questions · one mistake ends it</span></button><button class="button mode primary" data-mode="speed"><strong>Speedrun</strong><span>Race the clock · +2s per mistake</span></button></div>
+<div class="panel"><h2>Your local bests</h2><div class="stats"><div class="stat"><small>Easy</small><strong id="best-easy">0</strong></div><div class="stat"><small>Hard</small><strong id="best-hard">0</strong></div><div class="stat"><small>Speedrun</small><strong id="best-speed">—</strong></div></div><p class="tiny">Easy and Hard track your highest streak. Speedrun tracks your fastest time for each region. Records stay in this browser.</p></div></section>
+<section id="speed-setup" class="hidden"><div class="toprow"><h1 class="logo" style="font-size:34px">Speedrun</h1><button class="button ghost" data-home>← Home</button></div><div class="panel"><label for="run-length">Choose a region</label><select id="run-length"><option value="world" selected>🌐 World — 197 flags</option><option value="oceania">🌏 Oceania</option><option value="africa">🌍 Africa</option><option value="north-america">🌎 North America</option><option value="south-america">🌎 South America</option><option value="asia">🌏 Asia</option><option value="europe">🌍 Europe</option></select><p class="tiny">Three-second countdown · flags are not repeated · every incorrect answer adds 2 seconds. Choose an answer to move to the next flag.</p><p id="setup-record" class="tiny"></p><button class="button primary" id="begin-speed">Start speedrun</button></div></section>
+<section id="game" class="hidden"><div class="toprow"><div><h2 id="game-title" style="margin:0">Easy mode</h2><span id="game-player" class="tiny"></span></div><button class="button ghost" data-home>← Home</button></div><div class="panel"><div id="countdown" class="hidden"></div><div id="game-stats" class="stats"><div class="stat"><small>Progress</small><strong id="game-progress">0/197</strong></div><div class="stat"><small id="metric-label">High score</small><strong id="metric-value">0</strong></div><div class="stat"><small id="third-label">Hints</small><strong id="third-value">5</strong></div></div><div class="progress"><div class="bar" id="progress-bar"></div></div><img class="flag" id="flag" alt="Flag to identify"><div id="answers" class="answers"></div><p class="message" id="game-message" aria-live="polite"></p><div class="toolbar"><button class="button" id="hint-button">Use hint</button><button class="button" id="restart-button">Restart</button></div></div></section>
+<section id="results" class="hidden"><div class="panel results center"><h2 id="result-title">Run complete!</h2><p id="result-detail"></p><div class="result-time" id="result-time"></div><p id="result-extra" class="tiny"></p><div class="toolbar"><button class="button primary" id="result-retry">Play again</button><button class="button" data-home>Home</button></div></div></section>
+<section id="leaderboard" class="panel"><div class="toprow"><h2>🏆 Global leaderboard</h2><span class="pill">Speedrun</span></div><label for="board-length">Leaderboard region</label><select id="board-length"><option value="world">🌐 World — 197 flags</option><option value="oceania">🌏 Oceania</option><option value="africa">🌍 Africa</option><option value="north-america">🌎 North America</option><option value="south-america">🌎 South America</option><option value="asia">🌏 Asia</option><option value="europe">🌍 Europe</option></select><div id="leader-status" class="tiny" aria-live="polite"></div><div class="leader-row leader-head"><div>#</div><div>Player</div><div>Final time</div><div>Errors</div></div><div id="leader-rows"></div><div class="toolbar" style="margin-top:16px"><button class="button" id="refresh-board">Refresh leaderboard</button></div></section><div class="footer">FLAG QUIZ! · Local records stay on your device. Shared leaderboard requires Supabase configuration.</div>
+</main><script type="module">
+// Replace these with your Supabase Project URL and publishable (anon) key.
+// NEVER insert a service_role or secret key into this public HTML file.
+const SUPABASE_URL='YOUR_SUPABASE_URL';
+const SUPABASE_ANON_KEY='YOUR_SUPABASE_PUBLISHABLE_KEY';
+const COUNTRIES=[
+  {
+    "name": "Dominica",
+    "flagUrl": "https://flagcdn.com/w320/dm.png",
+    "region": "north-america"
+  },
+  {
+    "name": "Bolivia",
+    "flagUrl": "https://flagcdn.com/w320/bo.png",
+    "region": "south-america"
+  },
+  {
+    "name": "Papua New Guinea",
+    "flagUrl": "https://flagcdn.com/w320/pg.png",
+    "region": "oceania"
+  },
+  {
+    "name": "Jordan",
+    "flagUrl": "https://flagcdn.com/w320/jo.png",
+    "region": "asia"
+  },
+  {
+    "name": "Zimbabwe",
+    "flagUrl": "https://flagcdn.com/w320/zw.png",
+    "region": "africa"
+  },
+  {
+    "name": "Costa Rica",
+    "flagUrl": "https://flagcdn.com/w320/cr.png",
+    "region": "north-america"
+  },
+  {
+    "name": "Honduras",
+    "flagUrl": "https://flagcdn.com/w320/hn.png",
+    "region": "north-america"
+  },
+  {
+    "name": "Guatemala",
+    "flagUrl": "https://flagcdn.com/w320/gt.png",
+    "region": "north-america"
+  },
+  {
+    "name": "Luxembourg",
+    "flagUrl": "https://flagcdn.com/w320/lu.png",
+    "region": "europe"
+  },
+  {
+    "name": "Cameroon",
+    "flagUrl": "https://flagcdn.com/w320/cm.png",
+    "region": "africa"
+  },
+  {
+    "name": "Cuba",
+    "flagUrl": "https://flagcdn.com/w320/cu.png",
+    "region": "north-america"
+  },
+  {
+    "name": "Timor-Leste",
+    "flagUrl": "https://flagcdn.com/w320/tl.png",
+    "region": "asia"
+  },
+  {
+    "name": "Morocco",
+    "flagUrl": "https://flagcdn.com/w320/ma.png",
+    "region": "africa"
+  },
+  {
+    "name": "Nauru",
+    "flagUrl": "https://flagcdn.com/w320/nr.png",
+    "region": "oceania"
+  },
+  {
+    "name": "Uzbekistan",
+    "flagUrl": "https://flagcdn.com/w320/uz.png",
+    "region": "asia"
+  },
+  {
+    "name": "Italy",
+    "flagUrl": "https://flagcdn.com/w320/it.png",
+    "region": "europe"
+  },
+  {
+    "name": "Iran",
+    "flagUrl": "https://flagcdn.com/w320/ir.png",
+    "region": "asia"
+  },
+  {
+    "name": "Thailand",
+    "flagUrl": "https://flagcdn.com/w320/th.png",
+    "region": "asia"
+  },
+  {
+    "name": "Chile",
+    "flagUrl": "https://flagcdn.com/w320/cl.png",
+    "region": "south-america"
+  },
+  {
+    "name": "Iceland",
+    "flagUrl": "https://flagcdn.com/w320/is.png",
+    "region": "europe"
+  },
+  {
+    "name": "Malawi",
+    "flagUrl": "https://flagcdn.com/w320/mw.png",
+    "region": "africa"
+  },
+  {
+    "name": "Cambodia",
+    "flagUrl": "https://flagcdn.com/w320/kh.png",
+    "region": "asia"
+  },
+  {
+    "name": "Liberia",
+    "flagUrl": "https://flagcdn.com/w320/lr.png",
+    "region": "africa"
+  },
+  {
+    "name": "Trinidad and Tobago",
+    "flagUrl": "https://flagcdn.com/w320/tt.png",
+    "region": "north-america"
+  },
+  {
+    "name": "India",
+    "flagUrl": "https://flagcdn.com/w320/in.png",
+    "region": "asia"
+  },
+  {
+    "name": "Portugal",
+    "flagUrl": "https://flagcdn.com/w320/pt.png",
+    "region": "europe"
+  },
+  {
+    "name": "Kuwait",
+    "flagUrl": "https://flagcdn.com/w320/kw.png",
+    "region": "asia"
+  },
+  {
+    "name": "Panama",
+    "flagUrl": "https://flagcdn.com/w320/pa.png",
+    "region": "north-america"
+  },
+  {
+    "name": "Mongolia",
+    "flagUrl": "https://flagcdn.com/w320/mn.png",
+    "region": "asia"
+  },
+  {
+    "name": "Ecuador",
+    "flagUrl": "https://flagcdn.com/w320/ec.png",
+    "region": "south-america"
+  },
+  {
+    "name": "Venezuela",
+    "flagUrl": "https://flagcdn.com/w320/ve.png",
+    "region": "south-america"
+  },
+  {
+    "name": "Peru",
+    "flagUrl": "https://flagcdn.com/w320/pe.png",
+    "region": "south-america"
+  },
+  {
+    "name": "Kiribati",
+    "flagUrl": "https://flagcdn.com/w320/ki.png",
+    "region": "oceania"
+  },
+  {
+    "name": "United Arab Emirates",
+    "flagUrl": "https://flagcdn.com/w320/ae.png",
+    "region": "asia"
+  },
+  {
+    "name": "Côte d’Ivoire",
+    "flagUrl": "https://flagcdn.com/w320/ci.png",
+    "region": "africa"
+  },
+  {
+    "name": "Samoa",
+    "flagUrl": "https://flagcdn.com/w320/ws.png",
+    "region": "oceania"
+  },
+  {
+    "name": "Spain",
+    "flagUrl": "https://flagcdn.com/w320/es.png",
+    "region": "europe"
+  },
+  {
+    "name": "Ethiopia",
+    "flagUrl": "https://flagcdn.com/w320/et.png",
+    "region": "africa"
+  },
+  {
+    "name": "Kyrgyzstan",
+    "flagUrl": "https://flagcdn.com/w320/kg.png",
+    "region": "asia"
+  },
+  {
+    "name": "Kazakhstan",
+    "flagUrl": "https://flagcdn.com/w320/kz.png",
+    "region": "asia"
+  },
+  {
+    "name": "Qatar",
+    "flagUrl": "https://flagcdn.com/w320/qa.png",
+    "region": "asia"
+  },
+  {
+    "name": "Canada",
+    "flagUrl": "https://flagcdn.com/w320/ca.png",
+    "region": "north-america"
+  },
+  {
+    "name": "Belarus",
+    "flagUrl": "https://flagcdn.com/w320/by.png",
+    "region": "europe"
+  },
+  {
+    "name": "Bulgaria",
+    "flagUrl": "https://flagcdn.com/w320/bg.png",
+    "region": "europe"
+  },
+  {
+    "name": "Albania",
+    "flagUrl": "https://flagcdn.com/w320/al.png",
+    "region": "europe"
+  },
+  {
+    "name": "Solomon Islands",
+    "flagUrl": "https://flagcdn.com/w320/sb.png",
+    "region": "oceania"
+  },
+  {
+    "name": "Armenia",
+    "flagUrl": "https://flagcdn.com/w320/am.png",
+    "region": "asia"
+  },
+  {
+    "name": "Saint Lucia",
+    "flagUrl": "https://flagcdn.com/w320/lc.png",
+    "region": "north-america"
+  },
+  {
+    "name": "Tajikistan",
+    "flagUrl": "https://flagcdn.com/w320/tj.png",
+    "region": "asia"
+  },
+  {
+    "name": "Oman",
+    "flagUrl": "https://flagcdn.com/w320/om.png",
+    "region": "asia"
+  },
+  {
+    "name": "Republic of the Congo",
+    "flagUrl": "https://flagcdn.com/w320/cg.png",
+    "region": "africa"
+  },
+  {
+    "name": "Moldova",
+    "flagUrl": "https://flagcdn.com/w320/md.png",
+    "region": "europe"
+  },
+  {
+    "name": "Sierra Leone",
+    "flagUrl": "https://flagcdn.com/w320/sl.png",
+    "region": "africa"
+  },
+  {
+    "name": "Saudi Arabia",
+    "flagUrl": "https://flagcdn.com/w320/sa.png",
+    "region": "asia"
+  },
+  {
+    "name": "Bosnia and Herzegovina",
+    "flagUrl": "https://flagcdn.com/w320/ba.png",
+    "region": "europe"
+  },
+  {
+    "name": "Bhutan",
+    "flagUrl": "https://flagcdn.com/w320/bt.png",
+    "region": "asia"
+  },
+  {
+    "name": "Tunisia",
+    "flagUrl": "https://flagcdn.com/w320/tn.png",
+    "region": "africa"
+  },
+  {
+    "name": "Slovenia",
+    "flagUrl": "https://flagcdn.com/w320/si.png",
+    "region": "europe"
+  },
+  {
+    "name": "France",
+    "flagUrl": "https://flagcdn.com/w320/fr.png",
+    "region": "europe"
+  },
+  {
+    "name": "Argentina",
+    "flagUrl": "https://flagcdn.com/w320/ar.png",
+    "region": "south-america"
+  },
+  {
+    "name": "Bahrain",
+    "flagUrl": "https://flagcdn.com/w320/bh.png",
+    "region": "asia"
+  },
+  {
+    "name": "Mexico",
+    "flagUrl": "https://flagcdn.com/w320/mx.png",
+    "region": "north-america"
+  },
+  {
+    "name": "Saint Vincent and the Grenadines",
+    "flagUrl": "https://flagcdn.com/w320/vc.png",
+    "region": "north-america"
+  },
+  {
+    "name": "Vanuatu",
+    "flagUrl": "https://flagcdn.com/w320/vu.png",
+    "region": "oceania"
+  },
+  {
+    "name": "New Zealand",
+    "flagUrl": "https://flagcdn.com/w320/nz.png",
+    "region": "oceania"
+  },
+  {
+    "name": "Equatorial Guinea",
+    "flagUrl": "https://flagcdn.com/w320/gq.png",
+    "region": "africa"
+  },
+  {
+    "name": "Belgium",
+    "flagUrl": "https://flagcdn.com/w320/be.png",
+    "region": "europe"
+  },
+  {
+    "name": "Australia",
+    "flagUrl": "https://flagcdn.com/w320/au.png",
+    "region": "oceania"
+  },
+  {
+    "name": "Brazil",
+    "flagUrl": "https://flagcdn.com/w320/br.png",
+    "region": "south-america"
+  },
+  {
+    "name": "Latvia",
+    "flagUrl": "https://flagcdn.com/w320/lv.png",
+    "region": "europe"
+  },
+  {
+    "name": "Netherlands",
+    "flagUrl": "https://flagcdn.com/w320/nl.png",
+    "region": "europe"
+  },
+  {
+    "name": "Maldives",
+    "flagUrl": "https://flagcdn.com/w320/mv.png",
+    "region": "asia"
+  },
+  {
+    "name": "Serbia",
+    "flagUrl": "https://flagcdn.com/w320/rs.png",
+    "region": "europe"
+  },
+  {
+    "name": "Kenya",
+    "flagUrl": "https://flagcdn.com/w320/ke.png",
+    "region": "africa"
+  },
+  {
+    "name": "Austria",
+    "flagUrl": "https://flagcdn.com/w320/at.png",
+    "region": "europe"
+  },
+  {
+    "name": "Sri Lanka",
+    "flagUrl": "https://flagcdn.com/w320/lk.png",
+    "region": "asia"
+  },
+  {
+    "name": "Mozambique",
+    "flagUrl": "https://flagcdn.com/w320/mz.png",
+    "region": "africa"
+  },
+  {
+    "name": "Türkiye",
+    "flagUrl": "https://flagcdn.com/w320/tr.png",
+    "region": "asia"
+  },
+  {
+    "name": "Japan",
+    "flagUrl": "https://flagcdn.com/w320/jp.png",
+    "region": "asia"
+  },
+  {
+    "name": "Lebanon",
+    "flagUrl": "https://flagcdn.com/w320/lb.png",
+    "region": "asia"
+  },
+  {
+    "name": "Colombia",
+    "flagUrl": "https://flagcdn.com/w320/co.png",
+    "region": "south-america"
+  },
+  {
+    "name": "Fiji",
+    "flagUrl": "https://flagcdn.com/w320/fj.png",
+    "region": "oceania"
+  },
+  {
+    "name": "Barbados",
+    "flagUrl": "https://flagcdn.com/w320/bb.png",
+    "region": "north-america"
+  },
+  {
+    "name": "Nicaragua",
+    "flagUrl": "https://flagcdn.com/w320/ni.png",
+    "region": "north-america"
+  },
+  {
+    "name": "Angola",
+    "flagUrl": "https://flagcdn.com/w320/ao.png",
+    "region": "africa"
+  },
+  {
+    "name": "Sweden",
+    "flagUrl": "https://flagcdn.com/w320/se.png",
+    "region": "europe"
+  },
+  {
+    "name": "Uruguay",
+    "flagUrl": "https://flagcdn.com/w320/uy.png",
+    "region": "south-america"
+  },
+  {
+    "name": "Somalia",
+    "flagUrl": "https://flagcdn.com/w320/so.png",
+    "region": "africa"
+  },
+  {
+    "name": "Eswatini",
+    "flagUrl": "https://flagcdn.com/w320/sz.png",
+    "region": "africa"
+  },
+  {
+    "name": "Burkina Faso",
+    "flagUrl": "https://flagcdn.com/w320/bf.png",
+    "region": "africa"
+  },
+  {
+    "name": "The Gambia",
+    "flagUrl": "https://flagcdn.com/w320/gm.png",
+    "region": "africa"
+  },
+  {
+    "name": "Taiwan",
+    "flagUrl": "https://flagcdn.com/w320/tw.png",
+    "region": "asia"
+  },
+  {
+    "name": "Tuvalu",
+    "flagUrl": "https://flagcdn.com/w320/tv.png",
+    "region": "oceania"
+  },
+  {
+    "name": "Malta",
+    "flagUrl": "https://flagcdn.com/w320/mt.png",
+    "region": "europe"
+  },
+  {
+    "name": "Poland",
+    "flagUrl": "https://flagcdn.com/w320/pl.png",
+    "region": "europe"
+  },
+  {
+    "name": "South Africa",
+    "flagUrl": "https://flagcdn.com/w320/za.png",
+    "region": "africa"
+  },
+  {
+    "name": "United Kingdom",
+    "flagUrl": "https://flagcdn.com/w320/gb.png",
+    "region": "europe"
+  },
+  {
+    "name": "São Tomé and Príncipe",
+    "flagUrl": "https://flagcdn.com/w320/st.png",
+    "region": "africa"
+  },
+  {
+    "name": "Indonesia",
+    "flagUrl": "https://flagcdn.com/w320/id.png",
+    "region": "asia"
+  },
+  {
+    "name": "Vatican City",
+    "flagUrl": "https://flagcdn.com/w320/va.png",
+    "region": "europe"
+  },
+  {
+    "name": "North Macedonia",
+    "flagUrl": "https://flagcdn.com/w320/mk.png",
+    "region": "europe"
+  },
+  {
+    "name": "Saint Kitts and Nevis",
+    "flagUrl": "https://flagcdn.com/w320/kn.png",
+    "region": "north-america"
+  },
+  {
+    "name": "El Salvador",
+    "flagUrl": "https://flagcdn.com/w320/sv.png",
+    "region": "north-america"
+  },
+  {
+    "name": "Namibia",
+    "flagUrl": "https://flagcdn.com/w320/na.png",
+    "region": "africa"
+  },
+  {
+    "name": "Czechia",
+    "flagUrl": "https://flagcdn.com/w320/cz.png",
+    "region": "europe"
+  },
+  {
+    "name": "Grenada",
+    "flagUrl": "https://flagcdn.com/w320/gd.png",
+    "region": "north-america"
+  },
+  {
+    "name": "Guinea",
+    "flagUrl": "https://flagcdn.com/w320/gn.png",
+    "region": "africa"
+  },
+  {
+    "name": "Yemen",
+    "flagUrl": "https://flagcdn.com/w320/ye.png",
+    "region": "asia"
+  },
+  {
+    "name": "Philippines",
+    "flagUrl": "https://flagcdn.com/w320/ph.png",
+    "region": "asia"
+  },
+  {
+    "name": "Switzerland",
+    "flagUrl": "https://flagcdn.com/w320/ch.png",
+    "region": "europe"
+  },
+  {
+    "name": "Finland",
+    "flagUrl": "https://flagcdn.com/w320/fi.png",
+    "region": "europe"
+  },
+  {
+    "name": "Denmark",
+    "flagUrl": "https://flagcdn.com/w320/dk.png",
+    "region": "europe"
+  },
+  {
+    "name": "Andorra",
+    "flagUrl": "https://flagcdn.com/w320/ad.png",
+    "region": "europe"
+  },
+  {
+    "name": "Syria",
+    "flagUrl": "https://flagcdn.com/w320/sy.png",
+    "region": "asia"
+  },
+  {
+    "name": "Mauritania",
+    "flagUrl": "https://flagcdn.com/w320/mr.png",
+    "region": "africa"
+  },
+  {
+    "name": "Afghanistan",
+    "flagUrl": "https://flagcdn.com/w320/af.png",
+    "region": "asia"
+  },
+  {
+    "name": "China",
+    "flagUrl": "https://flagcdn.com/w320/cn.png",
+    "region": "asia"
+  },
+  {
+    "name": "Algeria",
+    "flagUrl": "https://flagcdn.com/w320/dz.png",
+    "region": "africa"
+  },
+  {
+    "name": "Brunei",
+    "flagUrl": "https://flagcdn.com/w320/bn.png",
+    "region": "asia"
+  },
+  {
+    "name": "Chad",
+    "flagUrl": "https://flagcdn.com/w320/td.png",
+    "region": "africa"
+  },
+  {
+    "name": "Dominican Republic",
+    "flagUrl": "https://flagcdn.com/w320/do.png",
+    "region": "north-america"
+  },
+  {
+    "name": "Paraguay",
+    "flagUrl": "https://flagcdn.com/w320/py.png",
+    "region": "south-america"
+  },
+  {
+    "name": "Benin",
+    "flagUrl": "https://flagcdn.com/w320/bj.png",
+    "region": "africa"
+  },
+  {
+    "name": "Egypt",
+    "flagUrl": "https://flagcdn.com/w320/eg.png",
+    "region": "africa"
+  },
+  {
+    "name": "Singapore",
+    "flagUrl": "https://flagcdn.com/w320/sg.png",
+    "region": "asia"
+  },
+  {
+    "name": "United States",
+    "flagUrl": "https://flagcdn.com/w320/us.png",
+    "region": "north-america"
+  },
+  {
+    "name": "Haiti",
+    "flagUrl": "https://flagcdn.com/w320/ht.png",
+    "region": "north-america"
+  },
+  {
+    "name": "Marshall Islands",
+    "flagUrl": "https://flagcdn.com/w320/mh.png",
+    "region": "oceania"
+  },
+  {
+    "name": "Hungary",
+    "flagUrl": "https://flagcdn.com/w320/hu.png",
+    "region": "europe"
+  },
+  {
+    "name": "Romania",
+    "flagUrl": "https://flagcdn.com/w320/ro.png",
+    "region": "europe"
+  },
+  {
+    "name": "Georgia",
+    "flagUrl": "https://flagcdn.com/w320/ge.png",
+    "region": "asia"
+  },
+  {
+    "name": "Greece",
+    "flagUrl": "https://flagcdn.com/w320/gr.png",
+    "region": "europe"
+  },
+  {
+    "name": "Zambia",
+    "flagUrl": "https://flagcdn.com/w320/zm.png",
+    "region": "africa"
+  },
+  {
+    "name": "Botswana",
+    "flagUrl": "https://flagcdn.com/w320/bw.png",
+    "region": "africa"
+  },
+  {
+    "name": "Guyana",
+    "flagUrl": "https://flagcdn.com/w320/gy.png",
+    "region": "south-america"
+  },
+  {
+    "name": "Iraq",
+    "flagUrl": "https://flagcdn.com/w320/iq.png",
+    "region": "asia"
+  },
+  {
+    "name": "Libya",
+    "flagUrl": "https://flagcdn.com/w320/ly.png",
+    "region": "africa"
+  },
+  {
+    "name": "Tanzania",
+    "flagUrl": "https://flagcdn.com/w320/tz.png",
+    "region": "africa"
+  },
+  {
+    "name": "Seychelles",
+    "flagUrl": "https://flagcdn.com/w320/sc.png",
+    "region": "africa"
+  },
+  {
+    "name": "Norway",
+    "flagUrl": "https://flagcdn.com/w320/no.png",
+    "region": "europe"
+  },
+  {
+    "name": "Kosovo",
+    "flagUrl": "https://flagcdn.com/w320/xk.png",
+    "region": "europe"
+  },
+  {
+    "name": "Lithuania",
+    "flagUrl": "https://flagcdn.com/w320/lt.png",
+    "region": "europe"
+  },
+  {
+    "name": "Guinea-Bissau",
+    "flagUrl": "https://flagcdn.com/w320/gw.png",
+    "region": "africa"
+  },
+  {
+    "name": "Mauritius",
+    "flagUrl": "https://flagcdn.com/w320/mu.png",
+    "region": "africa"
+  },
+  {
+    "name": "South Sudan",
+    "flagUrl": "https://flagcdn.com/w320/ss.png",
+    "region": "africa"
+  },
+  {
+    "name": "Slovakia",
+    "flagUrl": "https://flagcdn.com/w320/sk.png",
+    "region": "europe"
+  },
+  {
+    "name": "Palestine",
+    "flagUrl": "https://flagcdn.com/w320/ps.png",
+    "region": "asia"
+  },
+  {
+    "name": "Jamaica",
+    "flagUrl": "https://flagcdn.com/w320/jm.png",
+    "region": "north-america"
+  },
+  {
+    "name": "Cabo Verde",
+    "flagUrl": "https://flagcdn.com/w320/cv.png",
+    "region": "africa"
+  },
+  {
+    "name": "Gabon",
+    "flagUrl": "https://flagcdn.com/w320/ga.png",
+    "region": "africa"
+  },
+  {
+    "name": "Ukraine",
+    "flagUrl": "https://flagcdn.com/w320/ua.png",
+    "region": "europe"
+  },
+  {
+    "name": "Belize",
+    "flagUrl": "https://flagcdn.com/w320/bz.png",
+    "region": "north-america"
+  },
+  {
+    "name": "Monaco",
+    "flagUrl": "https://flagcdn.com/w320/mc.png",
+    "region": "europe"
+  },
+  {
+    "name": "Laos",
+    "flagUrl": "https://flagcdn.com/w320/la.png",
+    "region": "asia"
+  },
+  {
+    "name": "Cyprus",
+    "flagUrl": "https://flagcdn.com/w320/cy.png",
+    "region": "asia"
+  },
+  {
+    "name": "Mali",
+    "flagUrl": "https://flagcdn.com/w320/ml.png",
+    "region": "africa"
+  },
+  {
+    "name": "Sudan",
+    "flagUrl": "https://flagcdn.com/w320/sd.png",
+    "region": "africa"
+  },
+  {
+    "name": "Liechtenstein",
+    "flagUrl": "https://flagcdn.com/w320/li.png",
+    "region": "europe"
+  },
+  {
+    "name": "Montenegro",
+    "flagUrl": "https://flagcdn.com/w320/me.png",
+    "region": "europe"
+  },
+  {
+    "name": "Malaysia",
+    "flagUrl": "https://flagcdn.com/w320/my.png",
+    "region": "asia"
+  },
+  {
+    "name": "North Korea",
+    "flagUrl": "https://flagcdn.com/w320/kp.png",
+    "region": "asia"
+  },
+  {
+    "name": "Comoros",
+    "flagUrl": "https://flagcdn.com/w320/km.png",
+    "region": "africa"
+  },
+  {
+    "name": "Nepal",
+    "flagUrl": "https://flagcdn.com/w320/np.png",
+    "region": "asia"
+  },
+  {
+    "name": "Azerbaijan",
+    "flagUrl": "https://flagcdn.com/w320/az.png",
+    "region": "asia"
+  },
+  {
+    "name": "Uganda",
+    "flagUrl": "https://flagcdn.com/w320/ug.png",
+    "region": "africa"
+  },
+  {
+    "name": "Eritrea",
+    "flagUrl": "https://flagcdn.com/w320/er.png",
+    "region": "africa"
+  },
+  {
+    "name": "Antigua and Barbuda",
+    "flagUrl": "https://flagcdn.com/w320/ag.png",
+    "region": "north-america"
+  },
+  {
+    "name": "Bangladesh",
+    "flagUrl": "https://flagcdn.com/w320/bd.png",
+    "region": "asia"
+  },
+  {
+    "name": "Niger",
+    "flagUrl": "https://flagcdn.com/w320/ne.png",
+    "region": "africa"
+  },
+  {
+    "name": "Myanmar",
+    "flagUrl": "https://flagcdn.com/w320/mm.png",
+    "region": "asia"
+  },
+  {
+    "name": "Ghana",
+    "flagUrl": "https://flagcdn.com/w320/gh.png",
+    "region": "africa"
+  },
+  {
+    "name": "Suriname",
+    "flagUrl": "https://flagcdn.com/w320/sr.png",
+    "region": "south-america"
+  },
+  {
+    "name": "Russia",
+    "flagUrl": "https://flagcdn.com/w320/ru.png",
+    "region": "europe"
+  },
+  {
+    "name": "Burundi",
+    "flagUrl": "https://flagcdn.com/w320/bi.png",
+    "region": "africa"
+  },
+  {
+    "name": "Pakistan",
+    "flagUrl": "https://flagcdn.com/w320/pk.png",
+    "region": "asia"
+  },
+  {
+    "name": "Rwanda",
+    "flagUrl": "https://flagcdn.com/w320/rw.png",
+    "region": "africa"
+  },
+  {
+    "name": "Croatia",
+    "flagUrl": "https://flagcdn.com/w320/hr.png",
+    "region": "europe"
+  },
+  {
+    "name": "Bahamas",
+    "flagUrl": "https://flagcdn.com/w320/bs.png",
+    "region": "north-america"
+  },
+  {
+    "name": "Central African Republic",
+    "flagUrl": "https://flagcdn.com/w320/cf.png",
+    "region": "africa"
+  },
+  {
+    "name": "Madagascar",
+    "flagUrl": "https://flagcdn.com/w320/mg.png",
+    "region": "africa"
+  },
+  {
+    "name": "Democratic Republic of the Congo",
+    "flagUrl": "https://flagcdn.com/w320/cd.png",
+    "region": "africa"
+  },
+  {
+    "name": "Senegal",
+    "flagUrl": "https://flagcdn.com/w320/sn.png",
+    "region": "africa"
+  },
+  {
+    "name": "Palau",
+    "flagUrl": "https://flagcdn.com/w320/pw.png",
+    "region": "oceania"
+  },
+  {
+    "name": "Micronesia",
+    "flagUrl": "https://flagcdn.com/w320/fm.png",
+    "region": "oceania"
+  },
+  {
+    "name": "Israel",
+    "flagUrl": "https://flagcdn.com/w320/il.png",
+    "region": "asia"
+  },
+  {
+    "name": "Estonia",
+    "flagUrl": "https://flagcdn.com/w320/ee.png",
+    "region": "europe"
+  },
+  {
+    "name": "San Marino",
+    "flagUrl": "https://flagcdn.com/w320/sm.png",
+    "region": "europe"
+  },
+  {
+    "name": "Ireland",
+    "flagUrl": "https://flagcdn.com/w320/ie.png",
+    "region": "europe"
+  },
+  {
+    "name": "Togo",
+    "flagUrl": "https://flagcdn.com/w320/tg.png",
+    "region": "africa"
+  },
+  {
+    "name": "Vietnam",
+    "flagUrl": "https://flagcdn.com/w320/vn.png",
+    "region": "asia"
+  },
+  {
+    "name": "Turkmenistan",
+    "flagUrl": "https://flagcdn.com/w320/tm.png",
+    "region": "asia"
+  },
+  {
+    "name": "South Korea",
+    "flagUrl": "https://flagcdn.com/w320/kr.png",
+    "region": "asia"
+  },
+  {
+    "name": "Germany",
+    "flagUrl": "https://flagcdn.com/w320/de.png",
+    "region": "europe"
+  },
+  {
+    "name": "Nigeria",
+    "flagUrl": "https://flagcdn.com/w320/ng.png",
+    "region": "africa"
+  },
+  {
+    "name": "Tonga",
+    "flagUrl": "https://flagcdn.com/w320/to.png",
+    "region": "oceania"
+  },
+  {
+    "name": "Djibouti",
+    "flagUrl": "https://flagcdn.com/w320/dj.png",
+    "region": "africa"
+  },
+  {
+    "name": "Lesotho",
+    "flagUrl": "https://flagcdn.com/w320/ls.png",
+    "region": "africa"
+  }
+];
+const REGION_LABELS={world:'World',oceania:'Oceania',africa:'Africa','north-america':'North America','south-america':'South America',asia:'Asia',europe:'Europe'};
+const regionCountries=region=>region==='world'?COUNTRIES:COUNTRIES.filter(c=>c.region===region);
+for (const id of ['run-length','board-length']) {
+  for (const option of document.getElementById(id).options) {
+    const n=regionCountries(option.value).length;
+    option.textContent=`${REGION_LABELS[option.value]} (${n} flags)`;
+  }
+}
+const $=id=>document.getElementById(id);
+const read=(key,fall)=>{try{const v=localStorage.getItem('flagquiz_v2_'+key);return v===null?fall:JSON.parse(v)}catch{return fall}};
+const save=(key,v)=>{try{localStorage.setItem('flagquiz_v2_'+key,JSON.stringify(v))}catch{}};
+let nickname=read('nickname','');let scores=read('records',{});if(scores.easy===undefined){const legacy=Number(localStorage.getItem('highScore'));if(Number.isFinite(legacy)&&legacy>0){scores.easy=legacy;save('records',scores)}}if(scores.speed197!==undefined&&scores.speedworld===undefined){scores.speedworld=scores.speed197;save('records',scores)}let region='world';let mode='easy',pool=[],index=0,correct=0,answered=0,hints=5,mistakes=0,limit=197,answeredLock=false,running=false,clockStart=0,clockTick=null,hardTimer=null,nextTimeout=null,completedTime=0;
+let supabase=null,authUser=null;
+const online=!SUPABASE_URL.startsWith('YOUR_')&&!SUPABASE_ANON_KEY.startsWith('YOUR_');
+if(online){import('https://esm.sh/@supabase/supabase-js@2').then(({createClient})=>{supabase=createClient(SUPABASE_URL,SUPABASE_ANON_KEY);refreshLeaderboard()}).catch(e=>{console.warn('Supabase unavailable:',e);$('leader-status').textContent='Online leaderboard temporarily unavailable.'})}
+$('nickname').value=nickname;
+$('save-name').onclick=()=>{const candidate=$('nickname').value.trim().replace(/\s+/g,' ');if(!/^[\p{L}\p{N}_ .-]{2,20}$/u.test(candidate)){$('name-status').textContent='Use 2–20 letters, numbers, spaces, underscores, dots or hyphens.';return}nickname=candidate;save('nickname',nickname);$('name-status').textContent='Saved as '+nickname+'.';updateBests()};
+$('name-status').textContent=nickname?'Welcome back, '+nickname+'!':'Enter a nickname to save your identity on this device.';
+function updateBests(){ $('best-easy').textContent=scores.easy||0;$('best-hard').textContent=scores.hard||0;const selected=$('run-length').value;const best=scores['speed'+selected];$('best-speed').textContent=best===undefined?'—':formatTime(best);$('setup-record').textContent=REGION_LABELS[selected]+' · '+regionCountries(selected).length+' flags · Your best: '+(best===undefined?'not set':formatTime(best));}
+function formatTime(ms){const cent=Math.max(0,Math.floor(ms/10));const secs=Math.floor(cent/100);return String(Math.floor(secs/60)).padStart(2,'0')+':'+String(secs%60).padStart(2,'0')+'.'+String(cent%100).padStart(2,'0')}
+function show(which){['home','speed-setup','game','results'].forEach(id=>$(id).classList.toggle('hidden',id!==which));window.scrollTo({top:0,behavior:'instant'})}
+function stop(){running=false;clearInterval(clockTick);clearInterval(hardTimer);clearTimeout(nextTimeout);$('countdown').classList.add('hidden')}
+function shuffled(input){const a=[...input];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function enter(which){stop();mode=which;if(which==='speed'){show('speed-setup');updateBests();return}start(which)}
+function start(which){stop();mode=which;region=which==='speed'?$('run-length').value:'world';const selectedCountries=regionCountries(region);limit=selectedCountries.length;pool=shuffled(selectedCountries);index=0;correct=0;answered=0;hints=which==='easy'?5:0;mistakes=0;answeredLock=false;clockStart=0;completedTime=0;$('game-title').textContent={easy:'Easy mode',hard:'Hard mode',speed:'Speedrun · '+REGION_LABELS[region]}[mode];$('game-player').textContent=nickname||'Guest player';$('hint-button').classList.toggle('hidden',mode!=='easy');$('metric-label').textContent=mode==='speed'?'Time':'High score';$('third-label').textContent=mode==='speed'?'Mistakes':mode==='hard'?'Time limit':'Hints';$('restart-button').textContent='Restart';show('game');updateHUD();if(mode==='speed')countdown();else{running=true;loadQuestion()}}
+function countdown(){let n=3;$('countdown').classList.remove('hidden');$('countdown').textContent=n;$('answers').replaceChildren();$('flag').classList.add('hidden');$('game-message').textContent='Get ready!';hardTimer=setInterval(()=>{n--;if(n>0){$('countdown').textContent=n}else{clearInterval(hardTimer);$('countdown').classList.add('hidden');$('flag').classList.remove('hidden');running=true;clockStart=performance.now();clockTick=setInterval(updateHUD,45);loadQuestion()}},1000)}
+function updateHUD(){ $('game-progress').textContent=(mode==='speed'?answered:correct)+'/'+limit;const pct=(mode==='speed'?answered:correct)/limit*100;$('progress-bar').style.width=pct+'%';$('metric-value').textContent=mode==='speed'?formatTime(clockStart?performance.now()-clockStart+mistakes*2000:0):String(scores[mode]||0);$('third-value').textContent=mode==='speed'?String(mistakes):mode==='hard'?'3 sec':String(hints)}
+function loadQuestion(){if(!running)return;if(mode==='speed'&&answered>=limit){finish();return}if(mode!=='speed'&&correct>=limit){finish();return}answeredLock=false;$('game-message').textContent='';const item=pool[index];if(!item){finish();return}$('flag').src=item.flagUrl;$('flag').alt='Identify this country flag';const wrong=shuffled((mode==='speed'?regionCountries(region):COUNTRIES).filter(c=>c.name!==item.name)).slice(0,2);const answers=shuffled([item,...wrong]);$('answers').replaceChildren(...answers.map((country,i)=>{const b=document.createElement('button');b.textContent=country.name;b.onclick=()=>choose(country.name,b);b.dataset.answer=country.name;b.setAttribute('aria-label',(i+1)+': '+country.name);return b}));preloadNext();updateHUD();if(mode==='hard'){clearInterval(hardTimer);hardTimer=setTimeout(()=>{if(!answeredLock)choose(null,null)},3000)}}
+function preloadNext(){const next=pool[index+1];if(next){const img=new Image();img.src=next.flagUrl}}
+function choose(value,clicked){if(!running||answeredLock)return;answeredLock=true;clearTimeout(hardTimer);const item=pool[index];const good=value===item.name;const buttons=[...$('answers').children];buttons.forEach(b=>{b.disabled=true;if(b.dataset.answer===item.name)b.classList.add('correct')});if(clicked&&!good)clicked.classList.add('wrong');if(good){correct++;answered++;if(mode!=='speed'){pool.splice(index,1);if(correct>(scores[mode]||0)){scores[mode]=correct;save('records',scores);updateBests()}}$('game-message').textContent='Correct!'}else{mistakes++;if(mode==='speed'){answered++;$('game-message').textContent='Wrong! +2 seconds'}else if(mode==='hard'){$('game-message').textContent=value===null?'Time up!':'Wrong answer!';updateHUD();nextTimeout=setTimeout(finish,650);return}else{$('game-message').textContent='Not quite — try the next flag';pool.push(pool.shift())}}if(mode==='speed'){index++;if(answered>=limit){updateHUD();nextTimeout=setTimeout(finish,260);return}nextTimeout=setTimeout(loadQuestion,100)}else{index=0;nextTimeout=setTimeout(loadQuestion,650)}updateHUD()}
+$('hint-button').onclick=()=>{if(mode!=='easy'||!running||answeredLock||hints<=0)return;const incorrect=[...$('answers').children].filter(b=>b.dataset.answer!==pool[index].name&&b.style.visibility!=='hidden');if(!incorrect.length)return;const hide=incorrect[Math.floor(Math.random()*incorrect.length)];hide.style.visibility='hidden';hide.disabled=true;hints--;updateHUD()};
+function finish(){if(!running)return;completedTime=mode==='speed'?Math.round(performance.now()-clockStart):0;stop();$('result-title').textContent=mode==='speed'?'Speedrun complete!':mode==='hard'?'Hard mode over':'All flags completed!';$('result-detail').textContent=mode==='speed'?`${REGION_LABELS[region]} · ${answered} flags answered · ${correct} correct · ${mistakes} mistakes`:mode==='hard'?`${correct} correct before the run ended`:`${correct} flags identified`;
+if(mode==='speed'){const total=completedTime+mistakes*2000;$('result-time').textContent=formatTime(total);$('result-extra').textContent=`Clock: ${formatTime(completedTime)} + ${mistakes} × 2 seconds = ${formatTime(total)}`;const key='speed'+region;if(scores[key]===undefined||total<scores[key]){scores[key]=total;save('records',scores);$('result-extra').textContent+=' · New local personal best!';updateBests()}submitRun(total)}else{$('result-time').textContent=correct+'/'+limit;$('result-extra').textContent='Personal best: '+(scores[mode]||0)}show('results')}
+$('restart-button').onclick=()=>start(mode);$('result-retry').onclick=()=>mode==='speed'?enter('speed'):start(mode);$('begin-speed').onclick=()=>start('speed');$('run-length').onchange=()=>updateBests();document.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>enter(b.dataset.mode));document.querySelectorAll('[data-home]').forEach(b=>b.onclick=()=>{stop();show('home');updateBests()});document.addEventListener('keydown',e=>{if(e.target.matches('input,select,textarea'))return;if(!running||answeredLock)return;const n=Number(e.key);if(n>=1&&n<=3){const b=$('answers').children[n-1];if(b&&!b.disabled)b.click()}});
+async function ensureAuth(){if(!supabase)return null;if(authUser)return authUser;const {data:{session},error:sessionError}=await supabase.auth.getSession();if(sessionError)throw sessionError;if(session){authUser=session.user;return authUser}const {data,error}=await supabase.auth.signInAnonymously();if(error)throw error;authUser=data.user;return authUser}
+async function submitRun(total){if(!supabase){$('result-extra').textContent+=' · Online leaderboard not connected';return}if(!nickname){$('result-extra').textContent+=' · Set a nickname on Home to submit online';return}try{const user=await ensureAuth();const {error}=await supabase.from('flag_runs').insert({user_id:user.id,nickname,region,flag_count:limit,elapsed_ms:completedTime,mistakes});if(error)throw error;$('result-extra').textContent+=' · Submitted to global leaderboard!';refreshLeaderboard()}catch(err){console.error(err);$('result-extra').textContent+=' · Online submission failed (local best saved)'}}
+async function refreshLeaderboard(){const status=$('leader-status');const rows=$('leader-rows');rows.replaceChildren();if(!supabase){status.textContent='Online leaderboard needs Supabase setup. Local high scores work already.';return}status.textContent='Loading scores…';try{await ensureAuth();const selectedRegion=$('board-length').value;const {data,error}=await supabase.from('flag_runs').select('user_id,nickname,elapsed_ms,mistakes,created_at').eq('region',selectedRegion).order('created_at',{ascending:false}).limit(5000);if(error)throw error;const best=new Map();for(const r of data){const total=r.elapsed_ms+r.mistakes*2000;const old=best.get(r.user_id);if(!old||total<old.total)best.set(r.user_id,{...r,total})}const ranked=[...best.values()].sort((a,b)=>a.total-b.total).slice(0,20);if(!ranked.length){status.textContent='No completed runs yet. Be the first!';return}status.textContent=`Top ${ranked.length} players · ${REGION_LABELS[selectedRegion]} (${regionCountries(selectedRegion).length} flags)`;ranked.forEach((r,i)=>{const line=document.createElement('div');line.className='leader-row';for(const cell of [String(i+1),r.nickname,formatTime(r.total),String(r.mistakes)]){const div=document.createElement('div');div.textContent=cell;line.append(div)}rows.append(line)})}catch(err){console.error(err);status.textContent='Could not load leaderboard. Check the Supabase URL, key, authentication and database setup.'}}
+$('board-length').onchange=refreshLeaderboard;$('refresh-board').onclick=refreshLeaderboard;updateBests();refreshLeaderboard();
+</script></body></html>
